@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <section>
+            <h4>1. Checkboxes in array</h4>
+            <div class="row">
+                <input
+                    type="checkbox"
+                    id="red"
+                    value="Red"
+                    v-model="colors"
+                >
+                <label for="red">Red</label>
+            </div>
+            <div class="row">
+                <input
+                    type="checkbox"
+                    id="green"
+                    value="Green"
+                    v-model="colors"
+                >
+                <label for="green">Green</label>
+            </div>
+            <button @click="clearColors">
+                Clear colors!
+            </button>
+        </section>
+        <section>
+            <h4>2. True-value / false-value </h4>
+            <input
+                type="checkbox"
+                id="true-false"
+                v-model="like"
+                true-value="yes"
+                false-value="no"
+            >
+        </section>
+        <section>
+            <h4>3. Lazy test</h4>
+            <input
+                type="text"
+                v-model.lazy="lazyTest"
+            >
+        </section>
+        <br>
+        <h4>State:</h4>
+        <div>
+            <p>Colors: {{ colors }}</p>
+            <p>Like: {{ like }}</p>
+            <p>Lazy Test: {{ lazyTest }}</p>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

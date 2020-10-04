@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <counter></counter>
+        <div :style="{ fontSize: titlesFontSize + 'em' }">
+            <my-title
+                v-for="title in titles"
+                :key="title"
+                :title="title"
+                @enlarge-text="enlargeText"
+            >
+                {{ title }}
+            </my-title>
+        </div>
+        <custom-input
+            v-model="searchText"
+        ></custom-input>
+        {{ searchText }}
+        <br>
+        <computed-custom-input
+            v-model="anotherSearchText"
+        ></computed-custom-input> 
+        {{ anotherSearchText }}
+        <alert-box>Error! Error! Error!</alert-box>
+    </div>
+    <script src="index.js"></script>    
+</body>
+</html>
